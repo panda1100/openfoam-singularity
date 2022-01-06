@@ -1,4 +1,4 @@
-# openfoam9-singularity
+# openfoam-singularity
 Simple Singularity container definition of OpenFOAM v9
 
 ## build Singularity container
