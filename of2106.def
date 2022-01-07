@@ -14,6 +14,7 @@ wget -O - https://dl.openfoam.com/pubkey.gpg | apt-key add -
 add-apt-repository https://dl.openfoam.com/repos/deb
 apt update
 apt install -y openfoam2106-default
+echo ". /usr/lib/openfoam/openfoam2106/etc/bashrc" >> /etc/bash.bashrc
 
 %post
 # /bin/sh --> bash
