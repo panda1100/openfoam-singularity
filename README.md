@@ -55,7 +55,6 @@ mpirun -np 8 ./of9 icoFoam -help
 
 ```
 ./of9 bash
-Singularity>mkdir -p $WM_PROJECT_USER_DIR
 Singularity>mkdir -p $FOAM_RUN
 Singularity>run
 Singularity>pwd
