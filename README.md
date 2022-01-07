@@ -55,7 +55,6 @@ mpirun -np 8 ./of9 icoFoam -help
 
 ```
 ./of9 bash
-Singularity>. /opt/openfoam9/etc/bashrc   TODO: Is there anyway to avoid this line?
 Singularity>mkdir -p $WM_PROJECT_USER_DIR
 Singularity>mkdir -p $FOAM_RUN
 Singularity>run
