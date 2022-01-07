@@ -16,7 +16,7 @@ apt update
 apt install -y openfoam7
 
 %post
-echo ". /opt/openfoam7/etc/bashrc" > /etc/bash.bashrc
+echo ". /opt/openfoam7/etc/bashrc" >> /etc/bash.bashrc
 
 %post
 # /bin/sh --> bash
