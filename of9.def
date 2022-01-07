@@ -12,7 +12,7 @@ wget -O - https://dl.openfoam.org/gpg.key | apt-key add -
 add-apt-repository http://dl.openfoam.org/ubuntu
 apt update
 apt install -y openfoam9
-echo ". /opt/openfoam9/etc/bashrc" > /etc/bash.bashrc
+echo ". /opt/openfoam9/etc/bashrc" >> /etc/bash.bashrc
 
 # /bin/sh --> bash
 echo "dash dash/sh boolean false" | debconf-set-selections
