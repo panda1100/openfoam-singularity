@@ -1,0 +1,26 @@
+BootStrap: docker
+From: ubuntu:20.04
+
+%files
+./sources.list /etc/apt/sources.list
+
+%post
+export DEBIAN_FRONTEND=noninteractive
+apt-get update && apt-get -y upgrade
+apt -y install software-properties-common wget curl git unar vim
+
+%post
+wget -O - https://dl.openfoam.com/pubkey.gpg | apt-key add -
+add-apt-repository https://dl.openfoam.com/repos/deb
+apt update
+apt install -y openfoam1912-default
+echo ". /usr/lib/openfoam/openfoam1912/etc/bashrc" >> /etc/bash.bashrc
+
+%post
+# /bin/sh --> bash
+echo "dash dash/sh boolean false" | debconf-set-selections
+dpkg-reconfigure dash
+
+%runscript
+. /usr/lib/openfoam/openfoam1912/etc/bashrc
+${@}
