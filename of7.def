@@ -1,0 +1,28 @@
+BootStrap: docker
+From: ubuntu:20.04
+
+%files
+./sources.list /etc/apt/sources.list
+
+%post
+export DEBIAN_FRONTEND=noninteractive
+apt-get update && apt-get -y upgrade
+apt -y install software-properties-common wget curl git unar vim
+
+%post
+wget -O - https://dl.openfoam.org/gpg.key | apt-key add -
+add-apt-repository http://dl.openfoam.org/ubuntu
+apt update
+apt install -y openfoam7
+
+%post
+echo ". /opt/openfoam7/etc/bashrc" > /etc/bash.bashrc
+
+%post
+# /bin/sh --> bash
+echo "dash dash/sh boolean false" | debconf-set-selections
+dpkg-reconfigure dash
+
+%runscript
+. /opt/openfoam7/etc/bashrc
+${@}
