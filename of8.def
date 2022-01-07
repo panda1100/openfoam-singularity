@@ -16,7 +16,7 @@ apt update
 apt install -y openfoam8
 
 %post
-echo ". /opt/openfoam8/etc/bashrc" > /etc/bash.bashrc
+echo ". /opt/openfoam8/etc/bashrc" >> /etc/bash.bashrc
 
 %post
 # /bin/sh --> bash
