@@ -48,7 +48,7 @@ Build: 9-b456138dc4bc
 ## parallel run
 
 ```
-mpirun -np 8 ./of9 icoFoam -help
+mpirun -np 8 ./of9 icoFoam -parallel
 ```
 
 ## interactive shell
